@@ -1,0 +1,63 @@
+.display-timer{
+    display: flex;
+    justify-content: center;
+    align-content: center;
+    /* margin-top: 200px; */
+}
+.timer-flex{
+    display: flex;
+    flex-wrap: wrap;
+    -webkit-box-reflect: below 1px linear-gradient(transparent , #0004);   
+}
+.timer-flex div{
+    margin-right: 10px;
+}
+.timer-flex div span{
+    display: block;
+    width: 105px;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 0 0 1px rgba(0, 0, 0, .5);
+}
+.timer-text{
+    height: 30px;
+    font-size: .7em;
+    letter-spacing: .2em;
+    text-transform: uppercase;
+    background-color: #035aa6;
+}
+.timer-num{
+    height: 80px;
+    font-size: 3em;
+    background-color: #0779e4;
+
+}
+
+.heading h4{
+    font-size: 20px;
+    margin-top: 200px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: 600;
+    color: white;
+    margin-bottom: 20px;
+}
+
+.btn-div{
+    margin-top: 125px;
+    text-align: center;
+}
+.btn-div button{
+    width: 105px;
+    height: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    text-transform: uppercase;
+    border: none;
+    margin-right: 10px;
+    background-color: #dd2c00;
+    color: white;
+    box-shadow: 0 0 10px #1b262c;
+}

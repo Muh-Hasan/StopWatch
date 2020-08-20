@@ -1,55 +1,14 @@
 import React, { useState } from 'react'
+import './timer.css'
 
 export default function Timer() {
 
-    // let [mil, setMil] = useState(0)
-    // let [sec, setSec] = useState(0)
-    // let [min, setMin] = useState(0)
-    // const [isActive, setActive] = useState(true)
-    // const [interv, setInterv] = useState<any>()
-
-    // function time() {
-    //     setMil(mil++)
-    //     if (mil === 100) {
-    //         setSec(sec++)
-    //         setMil(mil = 0)
-    //     } else if (sec === 10) {
-    //         setMin(min++)
-    //         setSec(sec = 0)
-    //     }
-    //     console.log('min' + min);
-
-    // }
-    // function start() {
-    //     setActive(false)
-    //     setInterv(setInterval(time, 10))
-    // }
-    // function stop() {
-    //     setActive(true)
-    //     setInterv(clearInterval(interv))
-    // }
-    // function reset() {
-    //     setInterv(clearInterval(interv))
-    //     setMil(mil = 0)
-    //     setSec(sec= 0)
-    //     setMin(min = 0)
-    //     setActive(true)
-    // }
-    // return (
-    //     <div>
-    //         <div>
-    //             <div>{min}</div>
-    //             <div>{sec}</div>
-    //             <div>{mil}</div>
-    //         </div>
-    //         <div>
-    //             <button onClick={isActive ? start : stop}>{isActive ? 'Start' : 'Stop'}</button>
-    //             <button onClick={reset}>Reset</button>
-    //         </div>
-    //     </div>
-    // )
     const [time, setTime] = useState({ ms: 0, s: 0, m: 0 });
+    
+    // set interval
     const [interv, setInterv] = useState<any>();
+    
+    // just to displpay buttns when needed 
     const [status, setStatus] = useState(0);
 
     const start = () => {
@@ -60,7 +19,7 @@ export default function Timer() {
 
     var updatedMs = time.ms, updatedS = time.s, updatedM = time.m;
     const run = () => {
-        if (updatedS === 6) {
+        if (updatedS === 60) {
             updatedM++;
             updatedS = 0;
         }
@@ -87,12 +46,27 @@ export default function Timer() {
 
     return (
         <div>
-            <div>
-                <span>{(time.m >= 10) ? time.m : "0" + time.m + ' '}</span>:
-                <span>{(time.s >= 10) ?  time.s : " 0" + time.s + ' '}</span>:
-                <span>{(time.ms >= 10) ? time.ms : " 0" + time.ms}</span>
+            <div className='heading'>
+                <h4>stop watch</h4>
             </div>
-            <div>
+            <div className='display-timer'>
+                <div className='timer-flex'>
+                    <div className='d-one'>
+                        <span className='timer-num'>{(time.m >= 10) ? time.m : "0" + time.m}</span>
+                        <span className='timer-text'>Minutes</span>
+                    </div>
+                    <div className='d-one'>
+                        <span className='timer-num'>{(time.s >= 10) ? time.s : "0" + time.s}</span>
+                        <span className='timer-text'>Seconds</span>
+                    </div>
+                    <div className='d-two'>
+                        <span className='timer-num'>{(time.ms >= 10) ? time.ms : "0" + time.ms}</span>
+                        <span className='timer-text'>MiliSeconds</span>
+                    </div>
+                </div>
+            </div>
+
+            <div className='btn-div'>
                 {(status === 0) ?
                     <button className=""
                         onClick={start}>Start</button> : ""
