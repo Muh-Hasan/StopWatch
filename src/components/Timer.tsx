@@ -45,22 +45,22 @@ export default function Timer() {
 
 
     return (
-        <div>
+        <div className='timer'>
             <div className='heading'>
                 <h4>stop watch</h4>
             </div>
             <div className='display-timer'>
                 <div className='timer-flex'>
                     <div className='d-one'>
-                        <span className='timer-num'>{(time.m >= 10) ? time.m : "0" + time.m}</span>
+                        <span className='timer-num one'>{(time.m >= 10) ? time.m : "0" + time.m}</span>
                         <span className='timer-text'>Minutes</span>
                     </div>
                     <div className='d-one'>
-                        <span className='timer-num'>{(time.s >= 10) ? time.s : "0" + time.s}</span>
+                        <span className='timer-num two'>{(time.s >= 10) ? time.s : "0" + time.s}</span>
                         <span className='timer-text'>Seconds</span>
                     </div>
                     <div className='d-two'>
-                        <span className='timer-num'>{(time.ms >= 10) ? time.ms : "0" + time.ms}</span>
+                        <span className='timer-num three'>{(time.ms >= 10) ? time.ms : "0" + time.ms}</span>
                         <span className='timer-text'>MiliSeconds</span>
                     </div>
                 </div>
